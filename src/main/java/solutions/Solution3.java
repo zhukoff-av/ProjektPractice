@@ -1,3 +1,4 @@
+package solutions;
 
 import java.io.*;
 import java.util.Scanner;
