@@ -3,6 +3,7 @@ package solutions;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.util.stream.LongStream;
 
 public class Factorial {
@@ -14,6 +15,7 @@ public class Factorial {
 
         System.out.println(factorial(input));
         System.out.println(factorialUsingRecursion(input));
+        System.out.println(factorialUsingFori(input));
     }
 
     /**
@@ -37,5 +39,18 @@ public class Factorial {
             return n;
         }
         return n * factorialUsingRecursion(n - 1);
+    }
+
+    /**
+     * Factorial using for i
+     */
+    public static String factorialUsingFori(int n) {
+        if (n < 0) return "0";
+        if (n == 0) return "1";
+        BigDecimal result = new BigDecimal(1);
+        for (int i = 1; i <= n; i++) {
+            result = result.multiply(new BigDecimal(i));
+        }
+        return result.toString();
     }
 }
